@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Lit + TS</title>
-    <link rel="stylesheet" href="./src/index.css" />
-    <script type="module" src="/src/my-element.ts"></script>
-  </head>
-  <body>
-    <my-element>
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="src/assets/images/rondtarin.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>rondtarin</title>
+    <link rel="stylesheet" href="src/components/main/style/styles.css"/>
 
-    </my-element>
-  </body>
+    <script type="module" src="src/components/main/main.ts"></script>
+    <script type="module" src="src/components/nav/nav.ts"></script>
+    <script type="module" src="src/components/footer/footer.ts"></script>
+
+
+</head>
+<body>
+<main-element>
+    <nav-element slot="nav"></nav-element>
+    <footer-element slot="footer"></footer-element>
+</main-element>
+</body>
 </html>

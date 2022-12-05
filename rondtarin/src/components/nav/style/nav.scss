@@ -1,0 +1,18 @@
+.nav-container {
+  @apply bg-white flex flex-row-reverse justify-between items-center p-5 shadow-md;
+
+  .nav {
+    @apply w-2/4 flex justify-end;
+    li{
+      @apply mr-5 font-bold;
+    }
+  }
+
+  .logo, .login {
+    @apply w-1/4;
+  }
+
+  .logo {
+    width: 90px;
+  }
+}

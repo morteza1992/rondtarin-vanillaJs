@@ -10,7 +10,7 @@
   "types": "types/my-element.d.ts",
   "files": [
     "dist",
-    "types"
+    "src/components"
   ],
   "scripts": {
     "dev": "vite",
@@ -18,7 +18,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lit": "^2.4.0"
+    "autoprefixer": "^10.4.13",
+    "lit": "^2.4.0",
+    "lit-scss-loader": "^2.0.1",
+    "node-sass": "^8.0.0",
+    "sass": "^1.56.1"
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4",
