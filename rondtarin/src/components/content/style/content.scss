@@ -3,7 +3,7 @@
   @apply flex flex-col items-center justify-center w-full p-2 lg:p-10;
   .banner-container {
     max-width: 1040px;
-    @apply flex items-center justify-center;
+    @apply flex items-center justify-center mt-5;
     img {
       @apply w-full;
     }
@@ -25,7 +25,11 @@
 
   .items-container {
     max-width: 1040px;
-    @apply w-full border rounded-2xl p-2 lg:p-5 flex items-center justify-center flex-wrap;
+    padding: 32px;
+    @media only screen and (max-width: 1024px) {
+      padding: 12px;
+    }
+    @apply w-full border rounded-2xl flex items-center justify-center flex-wrap;
 
     .box-content {
       @apply w-full flex items-center justify-center flex-nowrap sm:flex-wrap;
@@ -34,6 +38,12 @@
         .box {
           border: 2px solid #CCCCCC;
           background-color: #EDF7F7;
+
+          &:first-child {
+            background-color: #FFF6E6;
+
+          }
+
           width: 232px;
           height: 100px;
           @apply flex items-center justify-around rounded-3xl mx-1 mb-5 p-2;
@@ -114,78 +124,17 @@
       }
     }
 
-    .items {
-      @apply w-full flex flex-col mt-5 overflow-hidden;
-      border-radius: 24px;
-      border: 2px solid #EFEAFA;
-      @media only screen and (max-width: 1024px) {
-        border: unset;
-        border-radius: unset;
-      }
-
-      .row {
-        @apply w-full flex items-center justify-between flex-wrap p-5;
-        border-bottom: 2px solid #EFEAFA;
-        @media only screen and (max-width: 1024px) {
-          border: 2px solid #EFEAFA;
-          border-radius: 12px;
-          @apply mb-2
-        }
-        &:last-child {
-          border: unset;
-          @media only screen and (max-width: 1024px) {
-            border: 2px solid #EFEAFA;
-          }
-        }
-
-        .section {
-          @apply w-1/2 flex items-center flex-wrap;
-          &:first-child {
-            .column {
-              @apply justify-start sm:justify-evenly
-            }
-          }
-
-          &:last-child {
-            @apply justify-end sm:justify-evenly
-          }
-
-          .column {
-            @apply w-full sm:w-1/2 text-xs sm:text-sm mb-2 sm:mb-0 flex items-center justify-evenly;
-            div {
-              &:first-child {
-                @apply ml-2;
-              }
-            }
-
-            .action {
-              @apply py-2 px-5;
-              border-radius: 8px;
-            }
-
-            .mobile {
-              @apply px-5 py-1 bg-white flex items-center justify-center;
-              border: 2px solid #F2F2F2;
-              border-radius: 8px;
-            }
-          }
-
-          #price {
-            @apply justify-center;
-          }
-
-          .requests {
-            @apply w-full sm:w-1/2 pr-2 flex items-center justify-evenly;
-          }
-        }
-
-      }
-
-      .backGroundColored {
-        background-color: #F5F3FC;
-      }
+    .listItems {
+      @apply w-full;
     }
   }
 
+  .show-more {
+    @apply mt-5;
+    .show-more-button {
+      @apply py-2 px-5 ;
+      border-radius: 8px;
+    }
+  }
 
 }

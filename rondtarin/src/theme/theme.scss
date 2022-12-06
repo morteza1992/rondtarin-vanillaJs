@@ -1,3 +1,93 @@
 .button-container {
-  @apply text-xs font-bold;
+  @apply text-xs font-bold flex items-center justify-center;
+  img {
+    @apply mr-2;
+  }
+}
+
+.items {
+  @apply w-full flex flex-col mt-5 overflow-hidden;
+  border-radius: 24px;
+  border: 2px solid #EFEAFA;
+  @media only screen and (max-width: 1024px) {
+    border: unset;
+    border-radius: unset;
+  }
+
+  .row {
+    @apply w-full flex items-center justify-between flex-wrap py-2 px-5 sm:p-5 relative;
+    border-bottom: 2px solid #EFEAFA;
+    @media only screen and (max-width: 1024px) {
+      border: 2px solid #EFEAFA;
+      border-radius: 12px;
+      @apply mb-2
+    }
+
+    &:after {
+      content: '';
+      width: 6px;
+      height: 60%;
+      @apply absolute right-0 top-1/2 rounded-l-2xl;
+      transform: translate(0, -50%);
+      background-color: #916699;
+    }
+
+    &:last-child {
+      border: unset;
+      @media only screen and (max-width: 1024px) {
+        border: 2px solid #EFEAFA;
+      }
+    }
+
+    .section {
+      @apply w-1/2 flex items-center flex-wrap;
+      &:first-child {
+        .column {
+          @apply justify-start sm:justify-evenly
+        }
+      }
+
+      &:last-child {
+        .column {
+          @apply justify-end sm:justify-evenly
+        }
+      }
+
+      .column {
+        @apply w-full sm:w-1/2 text-xs sm:text-sm mb-2 sm:mb-0 flex items-center justify-evenly;
+        div {
+          &:first-child {
+            @apply ml-2;
+          }
+        }
+
+        .action {
+          @apply py-2 px-5 bg-white;
+          border-radius: 8px;
+        }
+
+        .mobile {
+          @apply px-5 py-1 bg-white flex items-center justify-center;
+          border: 2px solid #F2F2F2;
+          border-radius: 8px;
+        }
+      }
+
+      #price {
+        @apply justify-center;
+        .amount {
+          @apply font-bold;
+        }
+      }
+
+      .requests {
+        @apply w-full sm:w-1/2 pr-2 flex items-center justify-evenly;
+      }
+    }
+
+  }
+
+  .backGroundColored {
+    background-color: #F5F3FC;
+  }
 }

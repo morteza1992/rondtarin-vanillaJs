@@ -3,7 +3,7 @@
   .nav-content {
     @apply bg-white w-3/4 sm:w-2/4 flex  justify-start fixed h-full lg:static top-0 right-0;
     transition: 0.5s;
-
+    z-index: 99;
 
     .nav {
       z-index: 99;

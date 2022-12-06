@@ -9,6 +9,8 @@ import pack from '../../assets/images/package.svg'
 import arrowDown from '../../assets/images/arrowDown.svg'
 import filter from '../../assets/images/Filter.svg'
 import watch from '../../assets/images/watch.svg'
+import add from '../../assets/images/add.svg'
+import simBanner from '../../assets/images/simBanner.svg'
 
 // @ts-ignore
 // @ts-ignore
@@ -20,7 +22,7 @@ import watch from '../../assets/images/watch.svg'
 @customElement('content-element')
 export class ContentElement extends LitElement {
     private boxArray: Array<any>;
-    private dataArray: Array<any>;
+    private itemsArray: Array<any>;
 
     createRenderRoot() {
         return this;
@@ -51,7 +53,7 @@ export class ContentElement extends LitElement {
                 icon: pack
             },
         ]
-        this.dataArray = [
+        this.itemsArray = [
             {
                 mobile: '۰۹۱۲۳۴۵۶۷۸۹',
                 price: {
@@ -60,7 +62,8 @@ export class ContentElement extends LitElement {
                 },
                 requests: 'بدون پیشنهاد',
                 time: '۰۰:۱۹:۲۲',
-                textButton: 'شروع حراج'
+                textButton: 'شروع حراج',
+                icon: watch
             },
             {
                 mobile: '۰۹۱۲۳۴۵۶۷۸۹',
@@ -70,7 +73,8 @@ export class ContentElement extends LitElement {
                 },
                 requests: 'بدون پیشنهاد',
                 time: '۰۰:۱۹:۲۲',
-                textButton: 'شروع حراج'
+                textButton: 'شروع حراج',
+                icon: watch
             },
             {
                 mobile: '۰۹۱۲۳۴۵۶۷۸۹',
@@ -80,7 +84,8 @@ export class ContentElement extends LitElement {
                 },
                 requests: 'بدون پیشنهاد',
                 time: '۰۰:۱۹:۲۲',
-                textButton: 'شروع حراج'
+                textButton: 'شروع حراج',
+                icon: watch
             },
             {
                 mobile: '۰۹۱۲۳۴۵۶۷۸۹',
@@ -90,7 +95,8 @@ export class ContentElement extends LitElement {
                 },
                 requests: 'بدون پیشنهاد',
                 time: '۰۰:۱۹:۲۲',
-                textButton: 'شروع حراج'
+                textButton: 'شروع حراج',
+                icon: watch
             }
         ]
     }
@@ -114,48 +120,9 @@ export class ContentElement extends LitElement {
             `);
         })
 
-        const itemTemplates = [];
-        this.dataArray.map((el, index) => {
-            itemTemplates.push(html`
-                <div class="row ${index % 2 == 0 ? 'backGroundColored' : ''}">
-                    <div class="section">
-                        <div class="column">
-                            <div class="mobile">${el.mobile}</div>
-                        </div>
-                        <div class="column" id="price">
-                            <div>${el.price.key}</div>
-                            <div>
-                                <span>${el.price.value}</span>
-                                <span>ریال</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="requests">
-                            <div class="column">
-                                <div>${el.requests}</div>
-                            </div>
-                            <div class="column">
-                                <div>${el.time}</div>
-                                <img src="${watch}" alt="">
-                            </div>
-                        </div>
-                        <div class="column">
-                            <button-element
-                                    text="${el.textButton}"
-                                    textColor="#525252"
-                                    borderColor="#525252"
-                                    customClass="action">
-                            </button-element>
-                        </div>
-                    </div>
-                </div>
-            `);
-        })
-
         return html`
             <div class="content-container">
-                <div class="bannerContainer">
+                <div class="banner-container">
                     <img src="${banner}" alt="">
                 </div>
                 <div class="text-container">
@@ -208,8 +175,21 @@ export class ContentElement extends LitElement {
                             <img src="${arrowDown}" alt="">
                         </div>
                     </div>
-                    <div class="items">
-                        ${itemTemplates}
+                    <list-element
+                            class='listItems'
+                            .itemsArray="${this.itemsArray}">
+                    </list-element>
+                    <div class="show-more">
+                        <button-element
+                                text="مشاهده بیشتر"
+                                customClass="show-more-button"
+                                textColor="#6F59CA"
+                                borderColor="#6F59CA"
+                                icon="${add}">
+                        </button-element>
+                    </div>
+                    <div class="banner-container">
+                        <img src="${simBanner}" alt="">
                     </div>
                 </div>
 
