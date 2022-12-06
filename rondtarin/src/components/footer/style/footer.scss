@@ -1,0 +1,78 @@
+.footer-container {
+  @apply flex items-center justify-center flex-wrap p-5;
+  box-shadow: 0px -1px 4px rgba(13, 13, 13, 0.06);
+
+  .right, .left {
+    @apply w-full lg:w-1/2 flex items-center text-xs font-bold;
+  }
+
+  .right {
+    @apply p-5 lg:p-12 flex flex-col;
+    ul {
+      @apply w-full flex flex-wrap items-center justify-between;
+      li {
+        @apply w-1/3 py-2 pr-5 lg:pr-0;
+      }
+    }
+
+    .social-media {
+      @apply w-full flex items-center justify-center lg:justify-start mt-8;
+      .box {
+        @apply inline-flex items-center justify-between ml-6;
+        span {
+          @apply mr-2;
+        }
+      }
+    }
+  }
+
+  .left {
+    @apply justify-center lg:justify-end p-5 lg:p-12 ;
+  }
+
+  .text-container {
+    @apply border-t p-5 lg:p-12 ;
+    .title {
+      @apply font-bold;
+    }
+
+    a {
+      width: fit-content;
+      @apply text-Purple-05 mt-3 flex items-center justify-center;
+      img {
+        @apply mr-2;
+      }
+    }
+  }
+
+  .logos-container {
+    @apply flex flex-col items-center justify-center;
+    .title {
+      @apply text-xs mb-3;
+    }
+
+    .box-container {
+      @apply flex items-center justify-center flex-wrap;
+      .box {
+        width: 200px;
+        height: 50px;
+        @media only screen and (max-width: 1024px) {
+          width: 120px;
+          height: 100px;
+        }
+        border-radius: 12px;
+        @apply flex justify-center items-center flex-wrap py-2 px-5 mx-3 text-xs font-bold mb-5;
+        background-color: #F7F7F7;
+
+        img {
+          @apply lg:ml-3 h-1/2 lg:h-5/6;
+        }
+
+        span {
+          @apply w-full lg:w-auto text-center;
+        }
+      }
+    }
+
+  }
+}

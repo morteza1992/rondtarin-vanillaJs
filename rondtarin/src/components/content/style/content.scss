@@ -1,0 +1,191 @@
+.content-container {
+  background-color: #FCFBFE;
+  @apply flex flex-col items-center justify-center w-full p-2 lg:p-10;
+  .banner-container {
+    max-width: 1040px;
+    @apply flex items-center justify-center;
+    img {
+      @apply w-full;
+    }
+  }
+
+  .text-container {
+    @apply lg:w-1/3 flex flex-col items-center justify-center py-10 px-5;
+    .title {
+      @apply text-center text-2xl lg:text-3xl font-bold mb-5;
+      .purple {
+        @apply text-Purple-05;
+      }
+    }
+
+    .text {
+      @apply text-center;
+    }
+  }
+
+  .items-container {
+    max-width: 1040px;
+    @apply w-full border rounded-2xl p-2 lg:p-5 flex items-center justify-center flex-wrap;
+
+    .box-content {
+      @apply w-full flex items-center justify-center flex-nowrap sm:flex-wrap;
+      .box-container {
+        @apply w-full items-center justify-between flex-nowrap hidden sm:flex;
+        .box {
+          border: 2px solid #CCCCCC;
+          background-color: #EDF7F7;
+          width: 232px;
+          height: 100px;
+          @apply flex items-center justify-around rounded-3xl mx-1 mb-5 p-2;
+          &:first-child {
+            @apply mr-0
+          }
+
+          &:last-child {
+            @apply ml-0
+          }
+
+          .text {
+            div {
+              &:first-child {
+                @apply font-bold;
+              }
+
+              &:nth-child(2) {
+                @apply text-xs;
+              }
+            }
+          }
+        }
+      }
+
+      .mobile-drop-down, .mobile-box {
+        height: 40px;
+        @apply items-center justify-between text-xs border py-1 px-3 rounded-lg flex sm:hidden;
+        .text {
+          div {
+            &:first-child {
+              @apply font-bold;
+            }
+          }
+        }
+      }
+
+      .mobile-drop-down {
+        @apply w-2/3;
+        border: 1px solid #FBA904;
+        background-color: #FFF6E6;
+      }
+
+      .mobile-box {
+        @apply w-1/3 border-Purple-05 mr-2;
+        background-color: #F5F3FC;
+      }
+    }
+
+    .filter-container {
+      @apply w-full hidden sm:flex;
+      .box {
+        height: 48px;
+        border-radius: 12px;
+        @apply w-1/5 mr-2 flex items-center justify-between text-xs border py-1 px-3 ;
+        &:first-child {
+          @apply w-2/5 mr-0;
+        }
+
+        .text {
+          @apply whitespace-nowrap;
+        }
+
+        .input {
+          @apply w-full mr-2 flex items-center justify-between flex-wrap;
+          input {
+            @apply w-full ;
+          }
+
+          div {
+            @apply text-Purple-05;
+          }
+        }
+
+        img {
+          @apply mr-2;
+        }
+      }
+    }
+
+    .items {
+      @apply w-full flex flex-col mt-5 overflow-hidden;
+      border-radius: 24px;
+      border: 2px solid #EFEAFA;
+      @media only screen and (max-width: 1024px) {
+        border: unset;
+        border-radius: unset;
+      }
+
+      .row {
+        @apply w-full flex items-center justify-between flex-wrap p-5;
+        border-bottom: 2px solid #EFEAFA;
+        @media only screen and (max-width: 1024px) {
+          border: 2px solid #EFEAFA;
+          border-radius: 12px;
+          @apply mb-2
+        }
+        &:last-child {
+          border: unset;
+          @media only screen and (max-width: 1024px) {
+            border: 2px solid #EFEAFA;
+          }
+        }
+
+        .section {
+          @apply w-1/2 flex items-center flex-wrap;
+          &:first-child {
+            .column {
+              @apply justify-start sm:justify-evenly
+            }
+          }
+
+          &:last-child {
+            @apply justify-end sm:justify-evenly
+          }
+
+          .column {
+            @apply w-full sm:w-1/2 text-xs sm:text-sm mb-2 sm:mb-0 flex items-center justify-evenly;
+            div {
+              &:first-child {
+                @apply ml-2;
+              }
+            }
+
+            .action {
+              @apply py-2 px-5;
+              border-radius: 8px;
+            }
+
+            .mobile {
+              @apply px-5 py-1 bg-white flex items-center justify-center;
+              border: 2px solid #F2F2F2;
+              border-radius: 8px;
+            }
+          }
+
+          #price {
+            @apply justify-center;
+          }
+
+          .requests {
+            @apply w-full sm:w-1/2 pr-2 flex items-center justify-evenly;
+          }
+        }
+
+      }
+
+      .backGroundColored {
+        background-color: #F5F3FC;
+      }
+    }
+  }
+
+
+}

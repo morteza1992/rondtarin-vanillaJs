@@ -13,6 +13,7 @@ import close from '../../assets/images/close.svg'
  */
 @customElement('nav-element')
 export class NavElement extends LitElement {
+    private show: boolean;
     createRenderRoot() {
         return this;
     }
@@ -34,7 +35,7 @@ export class NavElement extends LitElement {
                     <img src="${mobileMenu}" @click="${this.toggleNav}" alt="">
                 </div>
                 <div class="logo-container">
-                    <img class="logo" width="90px" src="${logo}" alt="">
+                    <img class="logo" width="80px" src="${logo}" alt="">
                 </div>
 
                 <div class="nav-content ${!this.show ? 'hide-nav' : 'show-nav'}">
@@ -49,8 +50,15 @@ export class NavElement extends LitElement {
                 </div>
 
                 <div class="login">
-                    <button-element>ورود</button-element>
-                    <button>ثبت نام</button>
+                    <button-element
+                            text="ورود"
+                            textColor="#6F59CA">
+                    </button-element>
+                    <button-element
+                            text="ثبت نام"
+                            customClass="login-button"
+                            textColor="#6F59CA">
+                    </button-element>
                 </div>
             </div>
         `
