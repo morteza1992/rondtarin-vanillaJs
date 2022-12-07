@@ -209,7 +209,7 @@ export class SelectElement extends LitElement {
     private list: any;
     private selected: any;
     private open: boolean | undefined;
-    private randomId: number;
+    private readonly randomId: number;
 
     createRenderRoot() {
         return this;
