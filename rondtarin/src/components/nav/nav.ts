@@ -3,9 +3,12 @@ import {customElement} from 'lit/decorators.js'
 import './style/nav.scss'
 // @ts-ignore
 import logo from '../../assets/images/rondtarin.svg'
+// @ts-ignore
 import mobileMenu from '../../assets/images/mobileMenu.svg'
+// @ts-ignore
 import close from '../../assets/images/close.svg'
 
+// @ts-ignore
 /**
  * An example element.
  *
