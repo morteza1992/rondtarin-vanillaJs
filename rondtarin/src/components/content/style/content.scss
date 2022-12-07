@@ -35,38 +35,6 @@
       @apply w-full flex items-center justify-center flex-nowrap sm:flex-wrap;
       .box-container {
         @apply w-full items-center justify-between flex-nowrap hidden sm:flex;
-        .box {
-          border: 2px solid #CCCCCC;
-          background-color: #EDF7F7;
-
-          &:first-child {
-            background-color: #FFF6E6;
-
-          }
-
-          width: 232px;
-          height: 100px;
-          @apply flex items-center justify-around rounded-3xl mx-1 mb-5 p-2;
-          &:first-child {
-            @apply mr-0
-          }
-
-          &:last-child {
-            @apply ml-0
-          }
-
-          .text {
-            div {
-              &:first-child {
-                @apply font-bold;
-              }
-
-              &:nth-child(2) {
-                @apply text-xs;
-              }
-            }
-          }
-        }
       }
 
       .mobile-drop-down, .mobile-box {

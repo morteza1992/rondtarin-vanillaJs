@@ -1,6 +1,7 @@
 import {LitElement, html} from 'lit'
 import {customElement} from 'lit/decorators.js'
 import './theme.scss'
+import closeCircle from '../assets/images/closeCircle.svg'
 
 /**
  * An example element.
@@ -97,7 +98,7 @@ export class ListElement extends LitElement {
                             </div>
                             <div class="column">
                                 <div>${el.time}</div>
-                                <img src="${el.watch}" alt="">
+                                <img src="${el.icon}" alt="">
                             </div>
                         </div>
                         <div class="column">
@@ -117,5 +118,83 @@ export class ListElement extends LitElement {
             <div class="items">
                 ${itemTemplates}
             </div>`
+    }
+}
+
+
+@customElement('wrapper-element')
+export class WrapperElement extends LitElement {
+    private content: any;
+    private visible: any;
+
+    createRenderRoot() {
+        return this;
+    }
+
+    // @ts-ignore
+    static get properties() {
+        return {
+            content: {type: String},
+            visible: {type: Boolean}
+        }
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        // @ts-ignore
+        let element = document.getElementById('wrapper-container')
+        if (element) {
+            document.body.appendChild(element)
+        }
+    }
+
+    render() {
+        let el = document.createElement('html');
+        el.innerHTML = this.content
+        return html`
+            <div class="wrapper-container ${this.visible ? 'show' : 'hide'}" id="wrapper-container">
+                <div class="wrapper">
+                    <div>
+                        <img src="${closeCircle}" alt="">
+                    </div>
+                    ${el}
+                </div>
+            </div>
+        `
+    }
+}
+
+
+@customElement('box-element')
+export class BoxElement extends LitElement {
+    private element: any;
+
+
+    createRenderRoot() {
+        return this;
+    }
+
+    // @ts-ignore
+    static get properties() {
+        return {
+            element: {type: Object}
+        }
+    }
+
+    render() {
+        return html`
+            <div class="box-element">
+                <div>
+
+                </div>
+                <div class="text">
+                    <div>${this.element.title}</div>
+                    <div>${this.element.text}</div>
+                </div>
+                <div>
+                    <img src="${this.element.icon}" alt="">
+                </div>
+            </div>
+        `
     }
 }

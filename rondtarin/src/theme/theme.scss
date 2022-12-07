@@ -91,3 +91,51 @@
     background-color: #F5F3FC;
   }
 }
+
+.wrapper-container {
+  @apply fixed w-full h-2/3 bottom-0 left-0 bg-white;
+  &:after {
+    content: '';
+    @apply fixed h-full w-full top-0 left-0;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+  }
+
+  .wrapper {
+    z-index: 99;
+    @apply w-full w-full bg-white;
+  }
+}
+.box-element {
+  border: 2px solid #CCCCCC;
+  background-color: #EDF7F7;
+
+  width: 232px;
+  height: 100px;
+  @apply flex items-center justify-around rounded-3xl mx-1 mb-5 p-2;
+  &:first-child {
+    @apply mr-0
+  }
+
+  &:last-child {
+    @apply ml-0
+  }
+
+  .text {
+    div {
+      &:first-child {
+        @apply font-bold;
+      }
+
+      &:nth-child(2) {
+        @apply text-xs;
+      }
+    }
+  }
+}
+.show{
+  @apply flex sm:hidden;
+}
+.hide{
+  @apply hidden;
+}

@@ -10,6 +10,7 @@ export declare class Button extends LitElement {
     private readonly customClass;
     private readonly borderColor;
     private readonly textColor;
+    private icon;
     createRenderRoot(): this;
     static get properties(): {
         text: {
@@ -22,6 +23,9 @@ export declare class Button extends LitElement {
             type: StringConstructor;
         };
         textColor: {
+            type: StringConstructor;
+        };
+        icon: {
             type: StringConstructor;
         };
     };

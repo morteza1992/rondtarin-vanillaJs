@@ -23,11 +23,11 @@ import simBanner from '../../assets/images/simBanner.svg'
 export class ContentElement extends LitElement {
     private boxArray: Array<any>;
     private itemsArray: Array<any>;
+    private showModal: Boolean;
 
     createRenderRoot() {
         return this;
     }
-
 
     constructor() {
         super();
@@ -35,7 +35,8 @@ export class ContentElement extends LitElement {
             {
                 title: 'حراج طلایی',
                 text: 'شماره‌های محبوب',
-                icon: golden
+                icon: golden,
+                backGroundColor: '#FFF6E6'
             },
             {
                 title: 'حراج نقره ای',
@@ -99,24 +100,16 @@ export class ContentElement extends LitElement {
                 icon: watch
             }
         ]
+        this.showModal = false
     }
 
     render() {
         const boxTemplates = [];
         this.boxArray.map((el) => {
             boxTemplates.push(html`
-                <div class="box">
-                    <div>
-
-                    </div>
-                    <div class="text">
-                        <div>${el.title}</div>
-                        <div>${el.text}</div>
-                    </div>
-                    <div>
-                        <img src="${el.icon}" alt="">
-                    </div>
-                </div>
+                <box-element
+                        .element="${el}">
+                </box-element>
             `);
         })
 
@@ -192,8 +185,12 @@ export class ContentElement extends LitElement {
                         <img src="${simBanner}" alt="">
                     </div>
                 </div>
-
             </div>
+            <wrapper-element
+                    .visible="${this.showModal}"
+                    content=${['<div>test</div>']}>
+
+            </wrapper-element>
         `
     }
 }
