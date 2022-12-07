@@ -1,15 +1,25 @@
 import {LitElement, html} from 'lit'
 import {customElement} from 'lit/decorators.js'
 import './style/content.scss'
+// @ts-ignore
 import banner from '../../assets/images/homeBanner.svg'
+// @ts-ignore
 import golden from '../../assets/images/golden.svg'
+// @ts-ignore
 import silver from '../../assets/images/silver.svg'
+// @ts-ignore
 import single from '../../assets/images/single.svg'
+// @ts-ignore
 import pack from '../../assets/images/package.svg'
+// @ts-ignore
 import arrowDown from '../../assets/images/arrowDown.svg'
+// @ts-ignore
 import filter from '../../assets/images/Filter.svg'
+// @ts-ignore
 import watch from '../../assets/images/watch.svg'
+// @ts-ignore
 import add from '../../assets/images/add.svg'
+// @ts-ignore
 import simBanner from '../../assets/images/simBanner.svg'
 
 // @ts-ignore
@@ -19,11 +29,12 @@ import simBanner from '../../assets/images/simBanner.svg'
  *
  * @slot - This element has a slot
  */
+// @ts-ignore
 @customElement('content-element')
 export class ContentElement extends LitElement {
     private boxArray: Array<any>;
-    private itemsArray: Array<any>;
-    private showModal: Boolean;
+    private readonly itemsArray: Array<any>;
+    private readonly showModal: Boolean;
 
     createRenderRoot() {
         return this;
