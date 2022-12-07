@@ -209,9 +209,14 @@ export class SelectElement extends LitElement {
     private list: any;
     private selected: any;
     private open: boolean | undefined;
+    private randomId: number;
 
     createRenderRoot() {
         return this;
+    }
+
+    clickedOutside() {
+
     }
 
     // @ts-ignore
@@ -220,6 +225,11 @@ export class SelectElement extends LitElement {
             list: {type: Array},
             selected: {type: Object}
         }
+    }
+
+    constructor() {
+        super();
+        this.randomId = Math.floor(Math.random() * 100)
     }
 
     selectRow(el: { text: string; value: null }) {
@@ -242,7 +252,8 @@ export class SelectElement extends LitElement {
         })
 
         return html`
-            <div class="drop-down ${this.open ? 'drop-down-open' : 'drop-down-close'}" @click="${this.toggle}">
+            <div id="${this.randomId}" class="drop-down ${this.open ? 'drop-down-open' : 'drop-down-close'}"
+                 @click="${this.toggle}">
                 <div class="text">${this.selected ? this.selected.text : 'انتخاب نمایید'}</div>
                 <img src="${arrowDown}" alt="">
                 <ul class="${this.open ? 'show' : 'hide'}">

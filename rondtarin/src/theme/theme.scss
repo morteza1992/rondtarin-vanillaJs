@@ -157,7 +157,10 @@
 
   ul {
     z-index: 9;
-    @apply w-full absolute top-full right-0 bg-white outline outline-gray-200 outline-1 p-3 rounded-b-xl;
+    @apply w-full absolute top-full right-0 bg-white outline outline-Purple-05 outline-1 p-3 rounded-b-xl;
+    li {
+      @apply w-full py-2;
+    }
   }
 
   .show {
@@ -170,7 +173,7 @@
 }
 
 .drop-down-open {
-  @apply bg-white rounded-b-none border-b-0;
+  @apply bg-white rounded-b-none border-b-0 border-Purple-05;
 }
 
 .drop-down-close {
