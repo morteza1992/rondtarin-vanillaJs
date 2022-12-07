@@ -1,7 +1,10 @@
 import {LitElement, html} from 'lit'
 import {customElement} from 'lit/decorators.js'
 import './theme.scss'
+// @ts-ignore
 import closeCircle from '../assets/images/closeCircle.svg'
+// @ts-ignore
+import arrowDown from '../assets/images/arrowDown.svg'
 
 /**
  * An example element.
@@ -183,7 +186,8 @@ export class BoxElement extends LitElement {
 
     render() {
         return html`
-            <div class="box-element">
+            <div class="box-element"
+                 style="${this.element.backGroundColor ? ('background-color:' + this.element.backGroundColor) : ''}">
                 <div>
 
                 </div>
@@ -194,6 +198,61 @@ export class BoxElement extends LitElement {
                 <div>
                     <img src="${this.element.icon}" alt="">
                 </div>
+            </div>
+        `
+    }
+}
+
+
+@customElement('select-element')
+export class SelectElement extends LitElement {
+    private list: any;
+    private selected: any;
+    private open: boolean | undefined;
+
+    createRenderRoot() {
+        return this;
+    }
+
+    // @ts-ignore
+    static get properties() {
+        return {
+            list: {type: Array},
+            selected: {type: Object}
+        }
+    }
+
+    selectRow(el: { text: string; value: null }) {
+        this.selected = el
+    }
+
+    toggle() {
+        this.open = !this.open
+        this.requestUpdate()
+    }
+
+    render() {
+        let elements: unknown = []
+        this.list.map((el: { text: string; value: null }) => {
+
+            // @ts-ignore
+            elements.push(html`
+                <li @click="${() => this.selectRow(el)}">${el.text}</li>
+            `)
+        })
+
+        return html`
+            <div class="drop-down ${this.open ? 'drop-down-open' : 'drop-down-close'}" @click="${this.toggle}">
+                <div class="text">${this.selected ? this.selected.text : 'انتخاب نمایید'}</div>
+                <img src="${arrowDown}" alt="">
+                <ul class="${this.open ? 'show' : 'hide'}">
+                    <li @click="${() => this.selectRow({
+                        text: 'انتخاب نمایید',
+                        value: null
+                    })}">انتخاب نمایید
+                    </li>
+                    ${elements}
+                </ul>
             </div>
         `
     }

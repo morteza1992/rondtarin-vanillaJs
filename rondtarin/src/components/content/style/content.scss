@@ -34,7 +34,7 @@
     .box-content {
       @apply w-full flex items-center justify-center flex-nowrap sm:flex-wrap;
       .box-container {
-        @apply w-full items-center justify-between flex-nowrap hidden sm:flex;
+        @apply w-full items-center justify-between flex-wrap hidden sm:flex;
       }
 
       .mobile-drop-down, .mobile-box {
@@ -89,6 +89,10 @@
         img {
           @apply mr-2;
         }
+      }
+
+      .filter {
+        @apply w-1/5 mr-2;
       }
     }
 

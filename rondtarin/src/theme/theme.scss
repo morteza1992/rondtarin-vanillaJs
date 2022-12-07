@@ -106,6 +106,7 @@
     @apply w-full w-full bg-white;
   }
 }
+
 .box-element {
   border: 2px solid #CCCCCC;
   background-color: #EDF7F7;
@@ -133,9 +134,45 @@
     }
   }
 }
-.show{
+
+.show {
   @apply flex sm:hidden;
 }
-.hide{
+
+.hide {
   @apply hidden;
+}
+
+.drop-down {
+  height: 48px;
+  @apply w-full cursor-pointer flex items-center justify-between text-xs border py-1 px-3 relative rounded-xl;
+  .text {
+    @apply whitespace-nowrap;
+  }
+
+  img {
+    @apply mr-2;
+  }
+
+
+  ul {
+    z-index: 9;
+    @apply w-full absolute top-full right-0 bg-white outline outline-gray-200 outline-1 p-3 rounded-b-xl;
+  }
+
+  .show {
+    @apply block;
+  }
+
+  .hide {
+    @apply hidden;
+  }
+}
+
+.drop-down-open {
+  @apply bg-white rounded-b-none border-b-0;
+}
+
+.drop-down-close {
+
 }

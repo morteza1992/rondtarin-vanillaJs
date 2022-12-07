@@ -153,20 +153,37 @@ export class ContentElement extends LitElement {
                                 <div>از ۱,۲۰۰,۰۰۰۰۰</div>
                                 <div>تا ۱۴,۲۰۰,۰۰۰</div>
                             </div>
-
                         </div>
-                        <div class="box">
-                            <div class="text">پیش شماره</div>
-                            <img src="${arrowDown}" alt="">
-                        </div>
-                        <div class="box">
-                            <div class="text">کارکرد</div>
-                            <img src="${arrowDown}" alt="">
-                        </div>
-                        <div class="box">
-                            <div class="text">مرتب‌سازی</div>
-                            <img src="${arrowDown}" alt="">
-                        </div>
+                        <select-element
+                                .list="${
+                                        [
+                                            {
+                                                text: 'پیش شماره',
+                                                value: '1'
+                                            }
+                                        ]}"
+                                class="filter">
+                        </select-element>
+                        <select-element
+                                .list="${
+                                        [
+                                            {
+                                                text: 'کارکرد',
+                                                value: '1'
+                                            }
+                                        ]}"
+                                class="filter">
+                        </select-element>
+                        <select-element
+                                .list="${
+                                        [
+                                            {
+                                                text: 'مرتب‌سازی',
+                                                value: '1'
+                                            }
+                                        ]}"
+                                class="filter">
+                        </select-element>
                     </div>
                     <list-element
                             class='listItems'

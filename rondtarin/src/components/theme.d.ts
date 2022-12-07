@@ -43,3 +43,48 @@ export declare class ListElement extends LitElement {
     constructor();
     render(): import("lit-html").TemplateResult<1>;
 }
+export declare class WrapperElement extends LitElement {
+    private content;
+    private visible;
+    createRenderRoot(): this;
+    static get properties(): {
+        content: {
+            type: StringConstructor;
+        };
+        visible: {
+            type: BooleanConstructor;
+        };
+    };
+    connectedCallback(): void;
+    render(): import("lit-html").TemplateResult<1>;
+}
+export declare class BoxElement extends LitElement {
+    private element;
+    createRenderRoot(): this;
+    static get properties(): {
+        element: {
+            type: ObjectConstructor;
+        };
+    };
+    render(): import("lit-html").TemplateResult<1>;
+}
+export declare class SelectElement extends LitElement {
+    private list;
+    private selected;
+    private open;
+    createRenderRoot(): this;
+    static get properties(): {
+        list: {
+            type: ArrayConstructor;
+        };
+        selected: {
+            type: ObjectConstructor;
+        };
+    };
+    selectRow(el: {
+        text: string;
+        value: null;
+    }): void;
+    toggle(): void;
+    render(): import("lit-html").TemplateResult<1>;
+}
